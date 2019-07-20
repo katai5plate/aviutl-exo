@@ -14,7 +14,7 @@ npm i
 
 ```ts
 import { decode, encode } from 'aviutl-exo';
-import { load, save, loadEXO, saveEXO } from 'aviutl-exo/fs';
+import { load, save, loadEXO, saveEXO } from 'aviutl-exo/lib/node/fs';
 
 const decodeEXO2JSON = async (fileName: string, saving: boolean) => {
   const exoText = await loadEXO(fileName);
