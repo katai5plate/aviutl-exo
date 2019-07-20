@@ -2,7 +2,7 @@
 
 Convert AviUtl exo files to JSON or YAML
 
-# usage
+# Usage
 
 ## install
 
@@ -10,7 +10,7 @@ Convert AviUtl exo files to JSON or YAML
 npm i
 ```
 
-## Use for Node.js
+## Usage for Node.js
 
 ```ts
 import { decode, encode } from 'aviutl-exo';
