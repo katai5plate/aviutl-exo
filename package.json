@@ -1,6 +1,6 @@
 {
   "name": "aviutl-exo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert AviUtl exo files to JSON or YAML",
   "main": "lib/node/index.js",
   "scripts": {
