@@ -30,13 +30,13 @@ const decodeEXO2YAML = async (fileName: string, saving: boolean) => {
 };
 
 const encodeJSON2EXO = async (fileName: string, saving: boolean) => {
-  const jsonText = await load(fileName, 'json', 'utf8');
+  const jsonText = await load(fileName, 'json');
   const result = encode(jsonText, 'JSON');
   if (saving) await saveEXO(fileName, result);
   return result;
 };
 const encodeYAML2EXO = async (fileName: string, saving: boolean) => {
-  const yamlText = await load(fileName, 'yaml', 'utf8');
+  const yamlText = await load(fileName, 'yaml');
   const result = encode(yamlText, 'YAML');
   if (saving) await saveEXO(fileName, result);
   return result;
