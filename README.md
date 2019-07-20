@@ -14,7 +14,7 @@ npm i
 
 ```ts
 import { decode, encode } from 'aviutl-exo';
-import { load, save } from 'aviutl-exo/fs';
+import { load, save } from 'aviutl-exo/lib/node/fs';
 
 import { outputFile, readFile } from 'fs-extra';
 import { parse } from 'path';
