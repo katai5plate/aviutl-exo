@@ -14,34 +14,31 @@ npm i
 
 ```ts
 import { decode, encode } from 'aviutl-exo';
-import { load, save } from 'aviutl-exo/fs';
+import { load, save, loadEXO, saveEXO } from 'aviutl-exo/fs';
 
-import { outputFile, readFile } from 'fs-extra';
-import { parse } from 'path';
-
-const decodeEXO2JSON = (fileName: string, saving: boolean) => {
-  const exoText = await load(fileName);
+const decodeEXO2JSON = async (fileName: string, saving: boolean) => {
+  const exoText = await loadEXO(fileName);
   const result = decode(exoText, 'JSON');
-  if (saving) await outputFile(`${parse(fileName).name}.json`, result);
+  if (saving) await save(fileName, 'json', result);
   return result;
 };
-const decodeEXO2YAML = (fileName: string, saving: boolean) => {
-  const exoText = await load(fileName);
+const decodeEXO2YAML = async (fileName: string, saving: boolean) => {
+  const exoText = await loadEXO(fileName);
   const result = decode(exoText, 'YAML');
-  if (saving) await outputFile(`${parse(fileName).name}.yaml`, result);
+  if (saving) await save(fileName, 'yaml', result);
   return result;
 };
 
-const encodeJSON2EXO = (fileName: string, saving: boolean) => {
-  const jsonText = await readFile(fileName, 'utf8');
+const encodeJSON2EXO = async (fileName: string, saving: boolean) => {
+  const jsonText = await load(fileName, 'json', 'utf8');
   const result = encode(jsonText, 'JSON');
-  if (saving) await save(`${parse(fileName).name}.exo`, result);
+  if (saving) await saveEXO(fileName, result);
   return result;
 };
-const encodeYAML2EXO = (fileName: string, saving: boolean) => {
-  const yamlText = await readFile(fileName, 'utf8');
-  const result = encode(jsonText, 'YAML');
-  if (saving) await save(`${parse(fileName).name}.exo`, result);
+const encodeYAML2EXO = async (fileName: string, saving: boolean) => {
+  const yamlText = await load(fileName, 'yaml', 'utf8');
+  const result = encode(yamlText, 'YAML');
+  if (saving) await saveEXO(fileName, result);
   return result;
 };
 ```

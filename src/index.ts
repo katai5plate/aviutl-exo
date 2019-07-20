@@ -1,9 +1,9 @@
 import { readable, normalize } from './conv/format';
 import { iniToObj, objToYaml, yamlToObj, objToIni } from './conv/ini2yaml';
 
-type FileType = 'JSON' | 'YAML';
+import { ReadableFileType } from './type';
 
-export const decode = (targetText: string, fileType: FileType) => {
+export const decode = (targetText: string, fileType: ReadableFileType) => {
   const obj = iniToObj(targetText);
   const formated = readable(obj);
   const yaml = objToYaml(formated);
@@ -12,7 +12,7 @@ export const decode = (targetText: string, fileType: FileType) => {
   }
   return yaml;
 };
-export const encode = (targetText: string, fileType: FileType) => {
+export const encode = (targetText: string, fileType: ReadableFileType) => {
   let targetObj = {};
   if (fileType === 'JSON') {
     targetObj = JSON.parse(targetText);
