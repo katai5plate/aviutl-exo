@@ -2,7 +2,7 @@ import { readFile, outputFile } from 'fs-extra';
 import { decode, encode } from 'iconv-lite';
 import { parse } from 'path';
 
-import { ReadableFileExt } from 'type';
+import { ReadableFileExt } from './type';
 
 export const load = async (
   fileName: string,

@@ -2,10 +2,11 @@
   "name": "aviutl-exo",
   "version": "1.0.0",
   "description": "Convert AviUtl exo files to JSON or YAML",
-  "main": "lib/index.js",
+  "main": "lib/node/index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "build": "npm run format && rd /s/q lib & tsc",
+    "build": "npm run format && rd /s/q \"lib/node\" & tsc -p tsconfig.node.json",
+    "build:web": "npm run format && rd /s/q \"lib/web\" & tsc -p tsconfig.web.json",
     "format": "prettier --write \"./src/**/*.ts\"",
     "format:watch": "npx onchange \"./src/**/*.ts\" -- npm run format"
   },
