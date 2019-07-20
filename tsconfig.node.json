@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "outDir": "./lib/node",
+    "downlevelIteration": true,
+    "declaration": true,
+    "target": "es5",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
