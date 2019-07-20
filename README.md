@@ -7,7 +7,7 @@ Convert AviUtl exo files to JSON or YAML
 ## install
 
 ```
-npm i
+npm install aviutl-exo
 ```
 
 ## Usage for Node.js
